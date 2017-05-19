@@ -1,0 +1,495 @@
+::-webkit-scrollbar
+    width 9px
+    height 9px
+
+::-webkit-scrollbar-button
+    width 0px
+    height 0px
+
+::-webkit-scrollbar-thumb
+    background #c0c0c0
+    border 0px none #ffffff
+    border-radius 50px
+    &:hover
+        background #c0c0c0
+    &:active
+        background #ddd
+
+::-webkit-scrollbar-track
+    background #eee
+    border 0px none #ffffff
+    border-radius 50px
+    &:hover
+        background #eee
+    &:active
+        background #eee
+
+::-webkit-scrollbar-corner
+    background transparent
+
+html
+    height 100vh
+
+body
+    height 100%
+    display flex
+    justify-content center
+
+.header-search
+  height 50px
+  background #3768aa
+  margin-bottom 15px
+  padding 0 20px
+  box horizontal middle
+
+  &-searchbar
+    height 25px
+    box horizontal
+    margin-right 30px
+    &__input
+      height 100%
+      width 275px
+      padding 0 0 0 10px
+      border none
+      margin 0
+      z-index 99
+    &__btn
+      background #d04c3f
+      border none
+      height 100%
+      color #fff
+      width 67px
+
+  &-navigation__link
+    text-decoration none
+    color #fff
+    margin-right 30px
+
+  &-cart
+    box horizontal middle
+    color #fff
+    margin-left auto
+    &__img
+       width 27px
+       height 22px
+       margin-right 10px
+
+
+.breadcrumbs
+    text-align center
+    margin-bottom 15px
+    max-width 1200px
+    margin 0 auto 15px
+
+.nav-list
+    -js-display flex
+    display -ms-flexbox
+    display flex
+    -ms-flex-direction row
+    flex-direction row
+    -ms-flex-pack center
+    justify-content center
+
+.nav__item
+    display inline-block
+    &:first-child
+        .nav__link
+            border-top-left-radius 10px
+            border-bottom-left-radius 10px
+            &:before
+                display none
+    &:last-child
+        .nav__link
+            padding-right 110px
+            padding-left 150px
+            border-top-right-radius 10px
+            border-bottom-right-radius 10px
+            &:after
+                display none
+    &.active
+        .nav__link
+            color #fff
+            background #66c8c9
+.nav__link
+    display block
+    float left
+    height 30px
+    margin-right 10px
+    text-decoration none
+    color #fff
+    background #3992ce
+    text-align center
+    position relative
+    padding 10px 40px 0 50px
+    font-size 20px
+    &:before
+        content ''
+        border-top 20px solid transparent
+        border-bottom 20px solid transparent
+        border-left 20px solid #fff
+        position absolute
+        left 0
+        top 0
+    &:after
+        content ''
+        position absolute
+        right -20px
+        top 0
+        border-top 20px solid transparent
+        border-bottom 20px solid transparent
+        border-left 20px solid #3992ce
+        z-index 1
+
+.main-content
+  box horizontal 
+  max-width 1200px
+  margin 0 auto
+
+.catalog 
+   width 90%
+   margin-right 15px
+   &-panel
+     height 50px
+     box horizontal
+     
+
+   &-full
+     border 1px solid #eee
+     padding 10px 15px
+     display none
+     transition all 3s
+     &.visible
+       display block
+       transition all 3s
+
+   &-full-navigation 
+     width 30%
+     height 375px
+     &__title
+       margin-bottom 30px
+       font-size 18px
+    
+
+   &-full-navigation-list
+     list-style none
+     height 270px
+     overflow auto
+     &-item
+       cursor pointer
+       & ul
+         display none
+       &.active ul
+         display block
+       &.active:before
+         content '\25BE'
+       &:before
+         content '\2023'
+         margin-right 5px
+     & li.inner-list
+       &:before
+         content '\2023'
+         margin-right 5px
+       &.active
+         &:before
+          content '\25BE'
+       &  ul
+          display none
+       &.active ul
+          display block   
+     & li.inner-list.open ul
+       display block  
+     & ul 
+        list-style-type none
+        padding-left 25px
+        & ul           
+          padding-left 25px  
+          & li:before
+            content ''
+   &-menu
+     box horizontal center middle
+     background #3992ce
+     color #fff
+     width 25%
+     &:hover
+       cursor pointer
+     &__title
+        margin-right 13px
+        text-decoration underline
+
+     &-block
+       width 20px
+       height 16px
+       transition all .5s
+       &.active
+         position relative
+         & .catalog-menu-item
+           transition all .5s
+           &:first-of-type
+              position absolute
+              top 8px
+              transform rotate(45deg)
+           &:nth-of-type(2)
+             display none
+           &:last-of-type
+              position absolute
+              top 8px
+              transform rotate(-45deg)   
+     &-item
+         height 2px
+         width 100%    
+         background #fff 
+         margin-bottom 4px
+         &:last-of-type
+           margin-bottom 0
+
+    &-search
+       box horizontal middle
+       width 75%    
+       background #3768aa   
+       padding 11px 16px
+       &__input
+         width 80%
+         height 24px
+         margin-right 14px
+         padding-left 15px
+       &__btn
+         background #d14a46
+         width 16%  
+         height 28px
+         border none
+         color #fff
+         cursor pointer
+
+    &__title
+      font-size 28px
+      margin 30px 0
+
+    &-list
+      &-item
+         margin-bottom 10px
+      &-item-product
+         box horizontal middle
+         border 1px solid #eee
+         height 150px
+
+         &__img
+            width 45px
+            height 80px
+            margin 0 45px
+
+         &-details
+            margin-right 20px
+
+            &__title 
+              text-transform uppercase
+              font-weight bold
+              margin-bottom 5px
+
+            &__link
+               color #333
+               margin-bottom 5px
+               display block
+
+            &-properties
+              margin-bottom 5px
+              box horizontal space-between
+
+         &-storage
+            margin-right 27px
+            max-width 112px
+               
+            &-rating
+                  margin-bottom 10px
+            &__availability
+               text-transform uppercase
+               border 1px solid #298635
+               text-align center
+               padding 3px
+               color #298635
+               margin-bottom 50px
+
+            &__amount
+               color #b1b1b1
+               position relative
+               font-size 13px
+               &:before
+                 position absolute
+                 top -5px
+                 content ''
+                 width 100%
+                 height 1px
+                 background #b1b1b1
+               &-quantity
+                 color #333
+                 margin-left 5px
+
+         &-cart
+           height 100%         
+           background #e5ecf2
+           padding 0 12px 0 20px
+           &__price
+              font-size 24px
+              margin 15px 0
+           &__btn
+             background #d14a45
+             border none
+             color #fff
+             font-size 18px
+             letter-spacing 1.5px
+             box horizontal middle
+             position relative
+             padding 6px 11px
+             margin-bottom 20px
+             cursor pointer
+             &:before
+               content ''
+               background url('../img/cart.png')
+               background-size 100%
+               size 28px
+               margin-right 10px
+           &__link
+              color #454a4e
+              font-size 11px
+              cursor pointer
+              text-decoration underline
+
+           &__link
+              display block
+
+      &-item-offers
+        display none
+        margin-top 10px
+        &.visible
+          display block
+      &-item-offer
+        box horizontal middle
+        font-size 13px
+        height 35px
+        
+        &:hover 
+          background #e5ecf4
+          & .catalog-list-item-offer__btn
+            visibility visible
+        &__reliability
+          position relative
+          color #c1c1c1
+          margin-left 45px
+          margin-right 35px
+          &:before
+            content ''
+            position absolute
+            size 16px
+            background yellow
+            border-radius 10px
+            left -30px
+          &-span 
+             color #484848
+             margin-left 5px
+        &__prepayment
+           color #6c6c6c
+           margin-right 50px
+        &__delivery
+           color #b2b2b2
+           margin-right 37px
+           &-span
+             color #484848
+        &__availability
+           color #b2b2b2
+           margin-right 40px
+           &-span
+             color #484848
+             margin-left 5px
+        &__price
+           color #484848
+           margin-right 20px    
+        &__btn
+           visibility hidden
+           background #d24941
+           border none
+           color #fff
+           padding 3px 6px
+           box horizontal middle
+           cursor pointer
+           &:before
+             content ''
+             background: url(../img/cart.png);
+             background-size: 100%;
+             width: 19px;
+             height: 19px;
+             margin-right: 5px;
+
+           
+         
+        
+
+.rating
+    width 112px
+    border none
+    & > input
+        display none
+    & > label
+        color #ddd
+        float right
+        &:before
+            margin 3px
+            font-size 1.25em
+            font-family FontAwesome
+            display inline-block
+            content "\f005"
+    & > .half
+        &:before
+            content "\f089"
+            position absolute
+
+.rating > input:checked ~ label, 
+.rating:not(:checked) > label:hover, 
+.rating:not(:checked) > label:hover ~ label
+    color #FFD700
+
+.rating > input:checked + label:hover, 
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, 
+.rating > input:checked ~ label:hover ~ label
+    color #FFED85         
+
+
+.aside 
+  width 31%
+
+.current-car
+  border 1px solid #eee    
+  padding 10px
+  margin-bottom 20px
+  &__title
+     font-size 18px
+     margin 0 0 10px
+  &-info
+    box horizontal
+    &__img
+       width 120px
+       height 60px
+       margin-right 15px
+    &-text__item
+       display block
+       line-height 18px
+
+.filter
+   border 1px solid #eee
+   padding 10px
+   &__title
+     font-size 20px
+     margin-bottom 10px
+   &-parameter
+     max-width 170px
+     margin-bottom 20px
+     &__type
+       display block
+       margin-bottom 10px
+       &-label
+         cursor pointer
+     &-row
+        margin-bottom 5px
+        &.double
+           box horizontal space-between middle
+
+

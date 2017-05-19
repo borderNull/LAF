@@ -1,0 +1,155 @@
+extends _layout
+
+block content
+  .header-search
+    .header-search-searchbar
+      input.header-search-searchbar__input(placeholder="подобрать запчасть по номеру")
+      button.header-search-searchbar__btn Найти
+    .header-search-navigation
+      a.header-search-navigation__link(href="#") поиск по машине
+      a.header-search-navigation__link(href="#") каталог товаров
+      a.header-search-navigation__link(href="#") акции
+      a.header-search-navigation__link(href="#") контакты
+    .header-search-cart
+      img.header-search-cart__img(src="./img/cart.png")
+      span.header-search-cart__text корзина(2)
+  .container  
+    nav.breadcrumbs
+      ul.nav-list
+        li.nav__item
+          a.nav__link(href="#") Audi
+        li.nav__item
+          a.nav__link(href="#") A4
+        li.nav__item
+          a.nav__link(href="#") A4 седан (8EC,B7)
+        li.nav__item
+          a.nav__link(href="#") Audi 2.0 TDI quattro [BRD] 170 л.с. Дизель 
+    main.main-content
+      section.catalog 
+        .catalog-panel
+          .catalog-menu
+            span.catalog-menu__title Выбрать из каталога
+            .catalog-menu-block
+              .catalog-menu-item
+              .catalog-menu-item
+              .catalog-menu-item
+          .catalog-search
+            input.catalog-search__input(placeholder="Введите наименование детали для быстрого поиска по каталогу")
+            button.catalog-search__btn Найти
+        .catalog-full
+          .catalog-full-navigation 
+            h3.catalog-full-navigation__title Полный каталог запчастей 
+            ul.catalog-full-navigation-list
+              -for(var c = 0; c < 8; c++)
+                li.catalog-full-navigation-list-item Тормозная система
+                  ul
+                    li.inner-list Тормоза
+                      ul
+                        li Правая колодка
+                        li Левая колодка
+                    li.inner-list Диски
+                      ul
+                        li Правая колодка
+                        li Левая колодка
+                    li.inner-list Колодки
+                      ul
+                        li Правая колодка
+                        li Левая колодка                               
+        h1.catalog__title Стекло двери задней правой для Audi A4
+        ul.catalog-list
+          -for(var i = 0; i < 8; i++)
+            li.catalog-list-item(data=i)
+              .catalog-list-item-product
+                img.catalog-list-item-product__img(src="./img/mobil2.png")
+                .catalog-list-item-product-details
+                  h5.catalog-list-item-product-details__title lukoil 19184
+                  a.catalog-list-item-product-details__link(href="#") Моторное масло ЛУКОЙЛ Стандарт SF/CC SAE 10W-40 (1л)
+                  p.catalog-list-item-product-details-properties
+                    span.catalog-list-item-product-details-properties__type Тип
+                    span.catalog-list-item-product-details-properties__value минеральное
+                  p.catalog-list-item-product-details-properties
+                    span.catalog-list-item-product-details-properties__type Вязкость
+                    span.catalog-list-item-product-details-properties__value 10W-40
+                  p.catalog-list-item-product-details-properties
+                    span.catalog-list-item-product-details-properties__type Объем упаковки
+                    span.catalog-list-item-product-details-properties__value 1л.  
+                .catalog-list-item-product-storage
+                  .catalog-list-item-product-storage-rating
+                    fieldset.rating
+                      input#star5(type='radio', name='rating', value='5')
+                      label.full(for='star5')
+                      input#star4half(type='radio', name='rating')
+                      label.half(for='star4half')
+                      input#star4(type='radio', name='rating', value='4')
+                      label.full(for='star4')
+                      input#star3half(type='radio', name='rating')
+                      label.half(for='star3half')
+                      input#star3(type='radio', name='rating', value='3')
+                      label.full(for='star3')
+                      input#star2half(type='radio', name='rating')
+                      label.half(for='star2half')
+                      input#star2(type='radio', name='rating', value='2')
+                      label.full(for='star2')
+                      input#star1half(type='radio', name='rating')
+                      label.half(for='star1half')
+                      input#star1(type='radio', name='rating', value='1')
+                      label.full(for='star1')
+                      input#starhalf(type='radio', name='rating')
+                      label.half(for='starhalf')
+                  h6.catalog-list-item-product-storage__availability на складе
+                  p.catalog-list-item-product-storage__amount В наличии
+                    span.catalog-list-item-product-storage__amount-quantity 100 шт. 
+                .catalog-list-item-product-cart
+                  p.catalog-list-item-product-cart__price 157 руб.
+                  button.catalog-list-item-product-cart__btn В корзину
+                  p.catalog-list-item-product-cart__link показать другие предложения
+              .catalog-list-item-offers
+                -for(var k = 0; k <4; k++)
+                  .catalog-list-item-offer
+                    p.catalog-list-item-offer__reliability
+                      | Надежность поставщика
+                      span.catalog-list-item-offer__reliability-span 93%
+                    p.catalog-list-item-offer__prepayment Предоплата
+                    p.catalog-list-item-offer__delivery 
+                      | Доставка 
+                      span.catalog-list-item-offer__delivery-span через 4 дн.
+                    p.catalog-list-item-offer__availability 
+                      | В наличии
+                      span.catalog-list-item-offer__availability-span 109 шт.
+                    p.catalog-list-item-offer__price 143 руб.
+                    button.catalog-list-item-offer__btn В корзину  
+      aside.aside
+        .current-car
+          h3.current-car__title Выбранный Автомобиль
+          .current-car-info
+            img.current-car-info__img(src="./img/car-current.png")
+            .current-car-info-text
+              span.current-car-info-text__item AUDI A4
+              span.current-car-info-text__item 2.0 TDI quattro BRD 170 л.с. Дизель
+        .filter
+          h3.filter__title Фильтрация
+          .filter-parameter
+            span.filter-parameter__type Тип
+            .filter-parameter-row
+              input.filter-parameter__type-input(type="checkbox", id="mineral")
+              label.filter-parameter__type-label(for="mineral") минеральное
+            .filter-parameter-row
+              input.filter-parameter__type-input(type="checkbox", id="semi-synt")
+              label.filter-parameter__type-label(for="semi-synt") полусинтетическое
+            .filter-parameter-row
+              input.filter-parameter__type-input(type="checkbox", id="synt")
+              label.filter-parameter__type-label(for="synt") синтетическое
+          .filter-parameter
+            span.filter-parameter__type Вязкость
+            -for(var i = 0; i<11; i++) 
+              .filter-parameter-row.double
+                .filter-parameter-item
+                  input.filter-parameter__type-input(type="checkbox", id=("0w-0" + i))
+                  label.filter-parameter__type-label(for=("0w-0" + i))=  '0W-0' + i 
+                .filter-parameter-item
+                  input.filter-parameter__type-input(type="checkbox", id=("0w-" + i + "0"))
+                  label.filter-parameter__type-label(for=("0w-" + i + "0"))= '0W-' + i + '0'   
+
+
+
+
